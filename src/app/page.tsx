@@ -20,7 +20,14 @@ import {
   CircleDot,
   Smartphone,
   Coins,
-  Grid
+  Grid,
+  Menu,
+  Bell,
+  Wifi,
+  Battery,
+  Signal,
+  MoreHorizontal,
+  Briefcase
 } from "lucide-react";
 import Header from "../components/Header";
 import EnginesTabs from "../components/EnginesTabs";
@@ -173,45 +180,103 @@ export default function Home() {
                   <button className={styles.btnSecondaryRounded}>Explore Products</button>
                 </div>
               </div>
-
-              {/* Right Column - Interactive Target Audience Card */}
+              {/* Right Column - Premium CSS iPhone solutions mockup */}
               <div className={styles.heroRight}>
-                <div className={styles.heroCard}>
-                  <div className={styles.cardHeader}>
-                    <span className={styles.cardHeaderLabel}>BUILT FOR</span>
-                    <TrendingUp size={20} className={styles.cardTrendIcon} />
-                  </div>
-                  <div className={styles.cardDivider}></div>
+                <div className={styles.phoneFrame}>
+                  {/* Physical Buttons */}
+                  <div className={styles.phonePowerButton} />
+                  <div className={styles.phoneVolUpButton} />
+                  <div className={styles.phoneVolDownButton} />
                   
-                  {/* Dynamic Slide Content with Key to Re-trigger Fade Animation */}
-                  <div key={activeSlideIndex} className={styles.cardSlideContent}>
-                    <span className={styles.cardCategory}>
-                      {heroSlides[activeSlideIndex].category}
-                    </span>
-                    <h3 className={styles.cardMainTitle}>
-                      {heroSlides[activeSlideIndex].title}
-                    </h3>
-                    <p className={styles.cardDescription}>
-                      {heroSlides[activeSlideIndex].description}
-                    </p>
-                    <a 
-                      href={heroSlides[activeSlideIndex].linkUrl} 
-                      className={styles.cardCtaLink}
-                    >
-                      {heroSlides[activeSlideIndex].linkText} <span className={styles.arrowIcon}>→</span>
-                    </a>
-                  </div>
+                  <div className={styles.phoneScreen}>
+                    {/* iOS Status Bar */}
+                    <div className={styles.phoneStatusBar}>
+                      <span className={styles.statusTime}>9:41</span>
+                      <div className={styles.dynamicIsland} />
+                      <div className={styles.statusIcons}>
+                        <Signal size={12} strokeWidth={2.5} />
+                        <Wifi size={12} strokeWidth={2.5} />
+                        <Battery size={16} strokeWidth={2.5} />
+                      </div>
+                    </div>
 
-                  {/* Slider Dash Indicators */}
-                  <div className={styles.sliderIndicators}>
-                    {heroSlides.map((_, idx) => (
-                      <button
-                        key={idx}
-                        className={`${styles.sliderDash} ${activeSlideIndex === idx ? styles.activeDash : ""}`}
-                        onClick={() => setActiveSlideIndex(idx)}
-                        aria-label={`Go to slide ${idx + 1}`}
-                      />
-                    ))}
+                    {/* App Navigation Bar */}
+                    <div className={styles.phoneAppHeader}>
+                      <Menu size={18} className={styles.headerMenuIcon} />
+                      <span className={styles.headerTitle}>Solutions</span>
+                      <div className={styles.headerBellWrapper}>
+                        <Bell size={18} className={styles.headerBellIcon} />
+                        <span className={styles.headerBellDot} />
+                      </div>
+                    </div>
+
+                    {/* Translucent layered waving gradient shapes */}
+                    <div className={styles.waveBgContainer}>
+                      <div className={styles.waveLayer1} />
+                      <div className={styles.waveLayer2} />
+                      <div className={styles.waveLayer3} />
+                    </div>
+
+                    {/* Floating Target Audience Solution Card inside the phone */}
+                    <div key={activeSlideIndex} className={styles.phoneCard}>
+                      <div className={styles.phoneCardHeader}>
+                        <span className={styles.phoneCardHeaderLabel}>BUILT FOR</span>
+                        <ArrowUpRight size={16} className={styles.phoneCardTrendIcon} />
+                      </div>
+                      <div className={styles.phoneCardDivider} />
+                      
+                      <div className={styles.phoneCardContent}>
+                        <span className={styles.phoneCardCategory}>
+                          {heroSlides[activeSlideIndex].category}
+                        </span>
+                        <h3 className={styles.phoneCardMainTitle}>
+                          {heroSlides[activeSlideIndex].title}
+                        </h3>
+                        <p className={styles.phoneCardDescription}>
+                          {heroSlides[activeSlideIndex].description}
+                        </p>
+                        
+                        <a href={heroSlides[activeSlideIndex].linkUrl} className={styles.phoneCardCtaLink}>
+                          {heroSlides[activeSlideIndex].linkText} <span className={styles.phoneArrowIcon}>→</span>
+                        </a>
+                      </div>
+
+                      {/* Slider Dash Indicators at the bottom of the card */}
+                      <div className={styles.phoneSliderIndicators}>
+                        {heroSlides.map((_, idx) => (
+                          <button
+                            key={idx}
+                            className={`${styles.phoneSliderDash} ${activeSlideIndex === idx ? styles.phoneActiveDash : ""}`}
+                            onClick={() => setActiveSlideIndex(idx)}
+                            aria-label={`Go to slide ${idx + 1}`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* App Bottom Navigation Bar inside the phone screen */}
+                    <div className={styles.phoneBottomNav}>
+                      <div className={`${styles.navItem} ${styles.navItemActive}`}>
+                        <TrendingUp size={18} />
+                        <span>Home</span>
+                      </div>
+                      <div className={styles.navItem}>
+                        <TrendingUp size={18} style={{ transform: "rotate(45deg)" }} />
+                        <span>Markets</span>
+                      </div>
+                      <div className={styles.navItem}>
+                        <Briefcase size={18} />
+                        <span>Portfolio</span>
+                      </div>
+                      <div className={styles.navItem}>
+                        <Compass size={18} />
+                        <span>Insights</span>
+                      </div>
+                      <div className={styles.navItem}>
+                        <MoreHorizontal size={18} />
+                        <span>More</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -309,60 +374,99 @@ export default function Home() {
           <div className={styles.container}>
             <div className={styles.aiGrid}>
               <div className={styles.aiLeft}>
-                <span className={styles.sub}>Artificial Intelligence</span>
+                <span className={styles.sub}>MAGNIX AI</span>
                 <h2 className={styles.title}>
                   AI That Works Where Intermediaries Need It Most
                 </h2>
                 <p className={`${styles.desc} ${styles.aiDesc}`}>
-                  Stop wasting hours reviewing client sheets manually. Our built-in AI models scan allocations, identify tax-loss opportunities, and draft personalized communications under your firm's brand voice.
+                  Practical intelligence built into the platform — spot allocation discrepancies, analyze investor behavior, identify tax-loss opportunities, and draft custom advisory updates.
                 </p>
                 <button className={`${styles.btnPrimary} ${styles.btnWithIcon}`}>
-                  Explore AI Capabilities <ArrowRight size={16} />
+                  Meet MAGNIX AI <ArrowRight size={16} />
                 </button>
               </div>
 
               <div className={styles.aiRight}>
+                {/* Card 1: Agent M */}
                 <div className={styles.aiCard}>
                   <div className={styles.aiCardHead}>
-                    <span className={`${styles.aiCardBadge} ${styles.aiCardBadgeGreen}`}></span>
-                    <span className={styles.aiCardLabel}>PORTFOLIO DRIFT</span>
-                    <span className={styles.aiCardTime}>1 min ago</span>
+                    <div className={styles.aiCardLogoAgentM}>M</div>
+                    <div className={styles.aiCardMeta}>
+                      <span className={styles.aiCardTitle}>Agent M</span>
+                      <span className={styles.aiCardSubtitle}>Personal Portfolio Analyst</span>
+                    </div>
+                    <button className={styles.aiCardLaunchBtn}>LAUNCH</button>
                   </div>
-                  <div className={styles.aiCardBar}>
-                    <div className={styles.aiCardBarContent}>
-                      <div className={styles.aiCardBarLineHeader}></div>
-                      <div className={styles.aiCardBarLine}></div>
-                      <div className={styles.aiCardBarLine}></div>
+                  <div className={styles.aiCardPreview}>
+                    <div className={styles.previewHeaderRow}>
+                      <span className={styles.previewHeading}>PORTFOLIO DRIFT ANALYSIS</span>
+                      <span className={styles.previewIndicatorGreen}>Active Scan</span>
+                    </div>
+                    <div className={styles.driftMetrics}>
+                      <div className={styles.driftBarWrapper}>
+                        <span className={styles.driftBarLabel}>Equity (US)</span>
+                        <div className={styles.driftBarBg}>
+                          <div className={styles.driftBarFillGreen} style={{ width: "72%" }}></div>
+                        </div>
+                        <span className={styles.driftBarVal}>72% (Target: 70%)</span>
+                      </div>
+                      <div className={styles.driftBarWrapper}>
+                        <span className={styles.driftBarLabel}>Debt (Liquid)</span>
+                        <div className={styles.driftBarBg}>
+                          <div className={styles.driftBarFillOrange} style={{ width: "28%" }}></div>
+                        </div>
+                        <span className={styles.driftBarVal}>28% (Target: 30%)</span>
+                      </div>
                     </div>
                   </div>
                 </div>
 
+                {/* Card 2: Portfolio Customizer */}
                 <div className={styles.aiCard}>
                   <div className={styles.aiCardHead}>
-                    <span className={`${styles.aiCardBadge} ${styles.aiCardBadgeBlue}`}></span>
-                    <span className={styles.aiCardLabel}>TAX OPTIMIZER</span>
-                    <span className={styles.aiCardTime}>3 min ago</span>
+                    <div className={styles.aiCardLogoCustomizer}>C</div>
+                    <div className={styles.aiCardMeta}>
+                      <span className={styles.aiCardTitle}>Portfolio Customizer</span>
+                      <span className={styles.aiCardSubtitle}>Rebalancing & Drift</span>
+                    </div>
+                    <button className={styles.aiCardLaunchBtn}>LAUNCH</button>
                   </div>
-                  <div className={styles.aiCardBar}>
-                    <div className={styles.aiCardBarContent}>
-                      <div className={styles.aiCardBarLineHeader}></div>
-                      <div className={styles.aiCardBarLine}></div>
-                      <div className={styles.aiCardBarLine}></div>
+                  <div className={styles.aiCardPreview}>
+                    <div className={styles.previewHeaderRow}>
+                      <span className={styles.previewHeading}>TAX-LOSS HARVESTING STATUS</span>
+                      <span className={styles.previewIndicatorBlue}>Optimized</span>
+                    </div>
+                    <div className={styles.taxStatsGrid}>
+                      <div className={styles.taxStatCard}>
+                        <span className={styles.taxLabel}>Short Term Loss</span>
+                        <span className={styles.taxVal}>₹42,500 Saved</span>
+                      </div>
+                      <div className={styles.taxStatCard}>
+                        <span className={styles.taxLabel}>Long Term Loss</span>
+                        <span className={styles.taxVal}>₹1,18,000 Saved</span>
+                      </div>
                     </div>
                   </div>
                 </div>
 
+                {/* Card 3: Digital Advisor */}
                 <div className={styles.aiCard}>
                   <div className={styles.aiCardHead}>
-                    <span className={`${styles.aiCardBadge} ${styles.aiCardBadgePurple}`}></span>
-                    <span className={styles.aiCardLabel}>CLIENT COMMUNICATIONS</span>
-                    <span className={styles.aiCardTime}>5 min ago</span>
+                    <div className={styles.aiCardLogoAdvisor}>D</div>
+                    <div className={styles.aiCardMeta}>
+                      <span className={styles.aiCardTitle}>Digital Advisor</span>
+                      <span className={styles.aiCardSubtitle}>Personalized client communications</span>
+                    </div>
+                    <button className={styles.aiCardLaunchBtn}>LAUNCH</button>
                   </div>
-                  <div className={styles.aiCardBar}>
-                    <div className={styles.aiCardBarContent}>
-                      <div className={styles.aiCardBarLineHeader}></div>
-                      <div className={styles.aiCardBarLine}></div>
-                      <div className={styles.aiCardBarLine}></div>
+                  <div className={styles.aiCardPreview}>
+                    <div className={styles.previewHeaderRow}>
+                      <span className={styles.previewHeading}>GENERATED ADVISORY BULLETIN</span>
+                      <span className={styles.previewIndicatorPurple}>Draft Ready</span>
+                    </div>
+                    <div className={styles.bulletinDraftBox}>
+                      <span className={styles.bulletinTitle}>Market Correction Update — Q2 2026</span>
+                      <p className={styles.bulletinBody}>Dear Client, in light of the recent rate adjustments, we have optimized your portfolio's fixed income weight...</p>
                     </div>
                   </div>
                 </div>
