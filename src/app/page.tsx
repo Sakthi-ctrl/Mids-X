@@ -73,23 +73,23 @@ export default function Home() {
   const thoughtLeaders = [
     {
       badge: "SaaS",
-      quote: "“Unlike most financial institutions, Mercury is built on software. Everything can be done within the app in 1-2 minutes.”",
-      author: "Karri Saarinen",
-      title: "Founder, Linear",
+      quote: "“With the right technology partner, scaling operations becomes effortless. Every process feels faster, smarter, and more connected.”",
+      author: "Aakash Bansal",
+      title: "Co-Founder and CEO",
       image: "/thought_leader.png"
     },
     {
       badge: "WealthTech",
-      quote: "“Scaling our advisory firm was a nightmare of paperwork until we integrated MIDASX's APIs. Now we onboard clients in minutes.”",
-      author: "Ananya Sharma",
-      title: "Managing Partner, Vertex Wealth",
+      quote: "“Technology should not just solve problems — it should create opportunities for innovation, growth, and long-term impact.”",
+      author: "Paresh Paladiya",
+      title: "Co-Founder & CTO",
       image: "/thought_leader_2.png"
     },
     {
       badge: "Compliance",
-      quote: "“The automated reconciliation and payout tracking saved our finance operations over 30 hours of manual work every single month.”",
-      author: "Marcus Chen",
-      title: "Chief Operating Officer, Apex Advisors",
+      quote: "“True leadership is about building a vision that inspires innovation, empowers people, and drives sustainable growth.”",
+      author: "Rajesh Paresh Soni",
+      title: "Co-Founder & Chairman",
       image: "/thought_leader_3.png"
     }
   ];
@@ -377,10 +377,12 @@ export default function Home() {
         {/* Section 5.5: Thought Leadership Section */}
         <section className={styles.leadershipSection}>
           <div className={styles.container}>
-            <div 
-              className={styles.leadershipCard} 
-              style={{ backgroundImage: `url(${thoughtLeaders[activeLeaderIndex].image})` }}
-            >
+            <div className={styles.leadershipCard}>
+              <img 
+                src={thoughtLeaders[activeLeaderIndex].image} 
+                alt={thoughtLeaders[activeLeaderIndex].author}
+                className={styles.leadershipImg}
+              />
               <div className={styles.leadershipOverlay}>
                 <div className={styles.leaderBadge}>
                   {thoughtLeaders[activeLeaderIndex].badge}
